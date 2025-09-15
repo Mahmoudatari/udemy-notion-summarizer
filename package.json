@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "webpack --mode=production && cp popup.html dist/ && cp -r icons dist/",
+    "build": "webpack --mode=production && cp src/popup.html dist/ && cp src/manifest.json dist/ && cp -r icons dist/",
     "dev": "webpack --mode=development --watch",
     "clean": "rm -rf dist",
     "build-extension": "npm run clean && npm run build"
