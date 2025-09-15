@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Udemy Transcript Pusher",
+  "version": "0.1.0",
+  "description": "Grab Udemy transcript and send to your API.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.udemy.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": ["https://*/*", "http://*/*", "https://*.udemy.com/*"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
